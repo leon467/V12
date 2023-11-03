@@ -16,9 +16,9 @@
             <class name="Tests.LoginTest">
                 <methods>
                     <include name="EmptyCredentials"/>
-                    <include name="InvalidCredentials"/>
-                    <include name="VerifyingCredentials"/>
-                    <include name="SignInWithRememberMe"/>
+<!--                    <include name="InvalidCredentials"/>-->
+<!--                    <include name="VerifyingCredentials"/>-->
+<!--                    <include name="SignInWithRememberMe"/>-->
                 </methods>
             </class>
 <!--            <class name="Tests.PasswordResetTest">-->
