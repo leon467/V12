@@ -1,22 +1,74 @@
-[INFO] Nov 03, 2023 12:49:48 PM Infra.BasePage - =======================================================
-[INFO] Nov 03, 2023 12:49:48 PM Infra.BasePage - OPENING WEB BROWSER
-[INFO] Nov 03, 2023 12:49:48 PM Infra.BasePage - =======================================================
+[INFO] Nov 03, 2023 2:42:02 PM Infra.BasePage - =======================================================
+[INFO] Nov 03, 2023 2:42:02 PM Infra.BasePage - OPENING WEB BROWSER
+[INFO] Nov 03, 2023 2:42:02 PM Infra.BasePage - =======================================================
 
-[INFO] Nov 03, 2023 12:49:54 PM Infra.BasePage - -------------------------------------------------------
-[INFO] Nov 03, 2023 12:49:54 PM Infra.BasePage - VALIDATING EMPTY CREDENTIALS
-[INFO] Nov 03, 2023 12:49:54 PM Infra.BasePage - -------------------------------------------------------
+[INFO] Nov 03, 2023 2:42:09 PM Infra.BasePage - -------------------------------------------------------
+[INFO] Nov 03, 2023 2:42:09 PM Infra.BasePage - VALIDATING EMPTY CREDENTIALS
+[INFO] Nov 03, 2023 2:42:09 PM Infra.BasePage - -------------------------------------------------------
 
-[INFO] Nov 03, 2023 12:50:08 PM Infra.BasePage - REDIRECT TO: http://10.18.0.131:3000/login
-[INFO] Nov 03, 2023 12:50:08 PM Infra.BasePage - ENTER USER ID: Empty
-[INFO] Nov 03, 2023 12:50:12 PM Infra.BasePage - ENTER PASSWORD: Empty
-[ERROR] Nov 03, 2023 12:50:17 PM Infra.BasePage - User Id should be more than 5 characters and Password should be more than 7 characters
+[INFO] Nov 03, 2023 2:42:20 PM Infra.BasePage - REDIRECT TO: http://10.18.0.131:3000/login
+[INFO] Nov 03, 2023 2:42:20 PM Infra.BasePage - ENTER USER ID: Empty
+[INFO] Nov 03, 2023 2:42:24 PM Infra.BasePage - ENTER PASSWORD: Empty
+[ERROR] Nov 03, 2023 2:42:30 PM Infra.BasePage - User Id should be more than 5 characters and Password should be more than 7 characters
 
-[INFO] Nov 03, 2023 12:50:19 PM Infra.BasePage - -------------------------------------------------------
-[INFO] Nov 03, 2023 12:50:19 PM Infra.BasePage - VALIDATING EMPTY CREDENTIALS PROCESSED
-[INFO] Nov 03, 2023 12:50:19 PM Infra.BasePage - -------------------------------------------------------
+[INFO] Nov 03, 2023 2:42:33 PM Infra.BasePage - -------------------------------------------------------
+[INFO] Nov 03, 2023 2:42:33 PM Infra.BasePage - VALIDATING EMPTY CREDENTIALS PROCESSED
+[INFO] Nov 03, 2023 2:42:33 PM Infra.BasePage - -------------------------------------------------------
 
-[INFO] Nov 03, 2023 12:50:21 PM Infra.BasePage - REFRESHING THE BROWSER
-[INFO] Nov 03, 2023 12:50:22 PM Infra.BasePage - =======================================================
-[INFO] Nov 03, 2023 12:50:22 PM Infra.BasePage - CLOSING WEB BROWSER
-[INFO] Nov 03, 2023 12:50:22 PM Infra.BasePage - =======================================================
+[INFO] Nov 03, 2023 2:42:35 PM Infra.BasePage - REFRESHING THE BROWSER
+[INFO] Nov 03, 2023 2:42:37 PM Infra.BasePage - -------------------------------------------------------
+[INFO] Nov 03, 2023 2:42:37 PM Infra.BasePage - VALIDATING INVALID CREDENTIALS
+[INFO] Nov 03, 2023 2:42:37 PM Infra.BasePage - -------------------------------------------------------
+
+[INFO] Nov 03, 2023 2:42:42 PM Infra.BasePage - REDIRECT TO: http://10.18.0.131:3000/login
+[INFO] Nov 03, 2023 2:42:42 PM Infra.BasePage - ENTER USERNAME: TestDynamicRateTO
+[INFO] Nov 03, 2023 2:42:46 PM Infra.BasePage - ENTER PASSWORD: 12345678
+[INFO] Nov 03, 2023 2:42:50 PM Infra.BasePage - CLICK ON SIGN IN BUTTON 
+
+[ERROR] Nov 03, 2023 2:42:57 PM Infra.BasePage - Oooops!
+
+Invalid Username or Password
+TRY AGAIN
+
+[INFO] Nov 03, 2023 2:42:57 PM Infra.BasePage - -------------------------------------------------------
+[INFO] Nov 03, 2023 2:42:57 PM Infra.BasePage - VALIDATING INVALID CREDENTIALS PROCESSED
+[INFO] Nov 03, 2023 2:42:57 PM Infra.BasePage - -------------------------------------------------------
+
+[INFO] Nov 03, 2023 2:42:59 PM Infra.BasePage - REFRESHING THE BROWSER
+[INFO] Nov 03, 2023 2:43:00 PM Infra.BasePage - -------------------------------------------------------
+[INFO] Nov 03, 2023 2:43:00 PM Infra.BasePage - VERIFYING CREDENTIALS
+[INFO] Nov 03, 2023 2:43:00 PM Infra.BasePage - -------------------------------------------------------
+
+[INFO] Nov 03, 2023 2:43:05 PM Infra.BasePage - REDIRECT TO: http://10.18.0.131:3000/login
+[INFO] Nov 03, 2023 2:43:05 PM Infra.BasePage - ENTER USERNAME: Leon123
+[INFO] Nov 03, 2023 2:43:10 PM Infra.BasePage - ENTER PASSWORD: Test@4567
+[INFO] Nov 03, 2023 2:43:14 PM Infra.BasePage - CLICK ON SIGN IN BUTTON 
+
+[INFO] Nov 03, 2023 2:43:18 PM Infra.BasePage - LOG IN SUCCESS
+
+[INFO] Nov 03, 2023 2:43:22 PM Infra.BasePage - -------------------------------------------------------
+[INFO] Nov 03, 2023 2:43:22 PM Infra.BasePage - VERIFYING CREDENTIALS PROCESSED
+[INFO] Nov 03, 2023 2:43:22 PM Infra.BasePage - -------------------------------------------------------
+
+[INFO] Nov 03, 2023 2:43:24 PM Infra.BasePage - -------------------------------------------------------
+[INFO] Nov 03, 2023 2:43:24 PM Infra.BasePage - VERIFYING CREDENTIALS
+[INFO] Nov 03, 2023 2:43:24 PM Infra.BasePage - -------------------------------------------------------
+
+[INFO] Nov 03, 2023 2:43:29 PM Infra.BasePage - REDIRECT TO: http://10.18.0.131:3000/login
+[INFO] Nov 03, 2023 2:43:29 PM Infra.BasePage - ENTER USERNAME: Leon123
+[INFO] Nov 03, 2023 2:43:34 PM Infra.BasePage - ENTER PASSWORD: Test@4567
+[INFO] Nov 03, 2023 2:43:38 PM Infra.BasePage - CLICK REMEMBER ME CHECKBOX
+[INFO] Nov 03, 2023 2:43:42 PM Infra.BasePage - CLICK ON SIGN IN BUTTON 
+
+[INFO] Nov 03, 2023 2:43:46 PM Infra.BasePage - LOG IN SUCCESS
+
+[INFO] Nov 03, 2023 2:43:52 PM Infra.BasePage - LOG IN SUCCESS
+
+[INFO] Nov 03, 2023 2:43:56 PM Infra.BasePage - -------------------------------------------------------
+[INFO] Nov 03, 2023 2:43:56 PM Infra.BasePage - REMEMBER ME FUNCTION VALIDATED
+[INFO] Nov 03, 2023 2:43:56 PM Infra.BasePage - -------------------------------------------------------
+
+[INFO] Nov 03, 2023 2:43:58 PM Infra.BasePage - =======================================================
+[INFO] Nov 03, 2023 2:43:58 PM Infra.BasePage - CLOSING WEB BROWSER
+[INFO] Nov 03, 2023 2:43:58 PM Infra.BasePage - =======================================================
 

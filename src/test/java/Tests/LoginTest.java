@@ -130,7 +130,7 @@ public class LoginTest extends BasePage {
         Thread.sleep(2000);
     }
 
-    @Test(priority = 3, description = "VerifyingCredentials", dataProvider = "loginCredentials", dataProviderClass = DataProviders.class)
+    @Test(priority = 4, description = "VerifyingCredentials", dataProvider = "loginCredentials", dataProviderClass = DataProviders.class)
     public void SignInWithRememberMe(String username, String password) throws InterruptedException {
         logger.info("-------------------------------------------------------");
         logger.info("VERIFYING CREDENTIALS");
@@ -161,7 +161,7 @@ public class LoginTest extends BasePage {
         loginPage.clickOnLogIn();
         Thread.sleep(2000);
 
-        homePageErrorValidations.HomePageRedirectErrorValidation(driver.getTitle());
+        homePageErrorValidations.HomePageRedirectErrorValidation(driver.getCurrentUrl());
         Thread.sleep(2000);
 
         // Step 2: Close the current tab (keeping the session alive)
@@ -177,7 +177,7 @@ public class LoginTest extends BasePage {
         loginPage.openLoginPage(loginPage.setUrl());
 
         // Continue your testing using the current WebDriver instance
-        homePageErrorValidations.HomePageRedirectErrorValidation(driver.getTitle());
+        homePageErrorValidations.HomePageRedirectErrorValidation(driver.getCurrentUrl());
         Thread.sleep(2000);
 
         // Step 6: Close the new tab when done
