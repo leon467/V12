@@ -1,74 +1,130 @@
-[INFO] Nov 03, 2023 2:42:02 PM Infra.BasePage - =======================================================
-[INFO] Nov 03, 2023 2:42:02 PM Infra.BasePage - OPENING WEB BROWSER
-[INFO] Nov 03, 2023 2:42:02 PM Infra.BasePage - =======================================================
+[INFO] Nov 13, 2023 12:51:10 PM Infra.BasePage - =======================================================
+[INFO] Nov 13, 2023 12:51:10 PM Infra.BasePage - OPENING WEB BROWSER
+[INFO] Nov 13, 2023 12:51:10 PM Infra.BasePage - =======================================================
 
-[INFO] Nov 03, 2023 2:42:09 PM Infra.BasePage - -------------------------------------------------------
-[INFO] Nov 03, 2023 2:42:09 PM Infra.BasePage - VALIDATING EMPTY CREDENTIALS
-[INFO] Nov 03, 2023 2:42:09 PM Infra.BasePage - -------------------------------------------------------
+[INFO] Nov 13, 2023 12:51:14 PM Infra.BasePage - -------------------------------------------------------
+[INFO] Nov 13, 2023 12:51:14 PM Infra.BasePage - VALIDATING USER ID
+[INFO] Nov 13, 2023 12:51:14 PM Infra.BasePage - -------------------------------------------------------
 
-[INFO] Nov 03, 2023 2:42:20 PM Infra.BasePage - REDIRECT TO: http://10.18.0.131:3000/login
-[INFO] Nov 03, 2023 2:42:20 PM Infra.BasePage - ENTER USER ID: Empty
-[INFO] Nov 03, 2023 2:42:24 PM Infra.BasePage - ENTER PASSWORD: Empty
-[ERROR] Nov 03, 2023 2:42:30 PM Infra.BasePage - User Id should be more than 5 characters and Password should be more than 7 characters
+[INFO] Nov 13, 2023 12:51:23 PM Infra.BasePage - REDIRECT TO: http://10.18.0.131:3000/login
+[INFO] Nov 13, 2023 12:51:23 PM Infra.BasePage - CLICK ON THE FORGOT PASSWORD LINK
+[INFO] Nov 13, 2023 12:51:26 PM Infra.BasePage - ENTER USER ID: Empty
+[INFO] Nov 13, 2023 12:51:30 PM Infra.BasePage - CLICK ON CONTINUE BUTTON 
 
-[INFO] Nov 03, 2023 2:42:33 PM Infra.BasePage - -------------------------------------------------------
-[INFO] Nov 03, 2023 2:42:33 PM Infra.BasePage - VALIDATING EMPTY CREDENTIALS PROCESSED
-[INFO] Nov 03, 2023 2:42:33 PM Infra.BasePage - -------------------------------------------------------
+[ERROR] Nov 13, 2023 12:51:32 PM Infra.BasePage - User Id should be entered
 
-[INFO] Nov 03, 2023 2:42:35 PM Infra.BasePage - REFRESHING THE BROWSER
-[INFO] Nov 03, 2023 2:42:37 PM Infra.BasePage - -------------------------------------------------------
-[INFO] Nov 03, 2023 2:42:37 PM Infra.BasePage - VALIDATING INVALID CREDENTIALS
-[INFO] Nov 03, 2023 2:42:37 PM Infra.BasePage - -------------------------------------------------------
+[INFO] Nov 13, 2023 12:51:32 PM Infra.BasePage - -------------------------------------------------------
+[INFO] Nov 13, 2023 12:51:32 PM Infra.BasePage - VALIDATING EMPTY CREDENTIALS PROCESSED
+[INFO] Nov 13, 2023 12:51:32 PM Infra.BasePage - -------------------------------------------------------
 
-[INFO] Nov 03, 2023 2:42:42 PM Infra.BasePage - REDIRECT TO: http://10.18.0.131:3000/login
-[INFO] Nov 03, 2023 2:42:42 PM Infra.BasePage - ENTER USERNAME: TestDynamicRateTO
-[INFO] Nov 03, 2023 2:42:46 PM Infra.BasePage - ENTER PASSWORD: 12345678
-[INFO] Nov 03, 2023 2:42:50 PM Infra.BasePage - CLICK ON SIGN IN BUTTON 
+[INFO] Nov 13, 2023 12:51:34 PM Infra.BasePage - -------------------------------------------------------
+[INFO] Nov 13, 2023 12:51:34 PM Infra.BasePage - VALIDATING INVALID USER ID
+[INFO] Nov 13, 2023 12:51:34 PM Infra.BasePage - -------------------------------------------------------
 
-[ERROR] Nov 03, 2023 2:42:57 PM Infra.BasePage - Oooops!
+[INFO] Nov 13, 2023 12:51:37 PM Infra.BasePage - ENTER USERNAME: abc
+[INFO] Nov 13, 2023 12:51:41 PM Infra.BasePage - CLICK ON CONTINUE BUTTON 
 
-Invalid Username or Password
+[ERROR] Nov 13, 2023 12:51:44 PM Infra.BasePage - Oooops!
+
+User ID is invalid.
 TRY AGAIN
 
-[INFO] Nov 03, 2023 2:42:57 PM Infra.BasePage - -------------------------------------------------------
-[INFO] Nov 03, 2023 2:42:57 PM Infra.BasePage - VALIDATING INVALID CREDENTIALS PROCESSED
-[INFO] Nov 03, 2023 2:42:57 PM Infra.BasePage - -------------------------------------------------------
+[INFO] Nov 13, 2023 12:51:44 PM Infra.BasePage - -------------------------------------------------------
+[INFO] Nov 13, 2023 12:51:44 PM Infra.BasePage - VALIDATING INVALID USER ID PROCESSED
+[INFO] Nov 13, 2023 12:51:44 PM Infra.BasePage - -------------------------------------------------------
 
-[INFO] Nov 03, 2023 2:42:59 PM Infra.BasePage - REFRESHING THE BROWSER
-[INFO] Nov 03, 2023 2:43:00 PM Infra.BasePage - -------------------------------------------------------
-[INFO] Nov 03, 2023 2:43:00 PM Infra.BasePage - VERIFYING CREDENTIALS
-[INFO] Nov 03, 2023 2:43:00 PM Infra.BasePage - -------------------------------------------------------
+[INFO] Nov 13, 2023 12:51:46 PM Infra.BasePage - REFRESHING THE BROWSER
+[INFO] Nov 13, 2023 12:51:47 PM Infra.BasePage - -------------------------------------------------------
+[INFO] Nov 13, 2023 12:51:47 PM Infra.BasePage - VERIFYING VALID USER ID
+[INFO] Nov 13, 2023 12:51:47 PM Infra.BasePage - -------------------------------------------------------
 
-[INFO] Nov 03, 2023 2:43:05 PM Infra.BasePage - REDIRECT TO: http://10.18.0.131:3000/login
-[INFO] Nov 03, 2023 2:43:05 PM Infra.BasePage - ENTER USERNAME: Leon123
-[INFO] Nov 03, 2023 2:43:10 PM Infra.BasePage - ENTER PASSWORD: Test@4567
-[INFO] Nov 03, 2023 2:43:14 PM Infra.BasePage - CLICK ON SIGN IN BUTTON 
+[INFO] Nov 13, 2023 12:51:50 PM Infra.BasePage - ENTER USERNAME: Leon123
+[INFO] Nov 13, 2023 12:51:55 PM Infra.BasePage - CLICK ON CONTINUE BUTTON 
 
-[INFO] Nov 03, 2023 2:43:18 PM Infra.BasePage - LOG IN SUCCESS
+[INFO] Nov 13, 2023 12:51:59 PM Infra.BasePage - USER ID IS VALID. REDIRECTED TO THE SECRET QUESTION PAGE: http://10.18.0.131:3000/secret-question-screen
+[INFO] Nov 13, 2023 12:51:59 PM Infra.BasePage - -------------------------------------------------------
+[INFO] Nov 13, 2023 12:52:01 PM Infra.BasePage - VALIDATING EMPTY SECRET ANSWER
+[INFO] Nov 13, 2023 12:52:01 PM Infra.BasePage - -------------------------------------------------------
 
-[INFO] Nov 03, 2023 2:43:22 PM Infra.BasePage - -------------------------------------------------------
-[INFO] Nov 03, 2023 2:43:22 PM Infra.BasePage - VERIFYING CREDENTIALS PROCESSED
-[INFO] Nov 03, 2023 2:43:22 PM Infra.BasePage - -------------------------------------------------------
+[INFO] Nov 13, 2023 12:52:03 PM Infra.BasePage - ENTER SECRET ANSWER: Empty
+[INFO] Nov 13, 2023 12:52:07 PM Infra.BasePage - CLICK ON SEND NOW BUTTON 
 
-[INFO] Nov 03, 2023 2:43:24 PM Infra.BasePage - -------------------------------------------------------
-[INFO] Nov 03, 2023 2:43:24 PM Infra.BasePage - VERIFYING CREDENTIALS
-[INFO] Nov 03, 2023 2:43:24 PM Infra.BasePage - -------------------------------------------------------
+[ERROR] Nov 13, 2023 12:52:10 PM Infra.BasePage - Answer should be entered
 
-[INFO] Nov 03, 2023 2:43:29 PM Infra.BasePage - REDIRECT TO: http://10.18.0.131:3000/login
-[INFO] Nov 03, 2023 2:43:29 PM Infra.BasePage - ENTER USERNAME: Leon123
-[INFO] Nov 03, 2023 2:43:34 PM Infra.BasePage - ENTER PASSWORD: Test@4567
-[INFO] Nov 03, 2023 2:43:38 PM Infra.BasePage - CLICK REMEMBER ME CHECKBOX
-[INFO] Nov 03, 2023 2:43:42 PM Infra.BasePage - CLICK ON SIGN IN BUTTON 
+[INFO] Nov 13, 2023 12:52:10 PM Infra.BasePage - -------------------------------------------------------
+[INFO] Nov 13, 2023 12:52:10 PM Infra.BasePage - VALIDATING EMPTY ANSWER PROCESSED
+[INFO] Nov 13, 2023 12:52:10 PM Infra.BasePage - -------------------------------------------------------
 
-[INFO] Nov 03, 2023 2:43:46 PM Infra.BasePage - LOG IN SUCCESS
+[INFO] Nov 13, 2023 12:52:12 PM Infra.BasePage - -------------------------------------------------------
+[INFO] Nov 13, 2023 12:52:12 PM Infra.BasePage - VALIDATING INVALID SECRET ANSWER
+[INFO] Nov 13, 2023 12:52:12 PM Infra.BasePage - -------------------------------------------------------
 
-[INFO] Nov 03, 2023 2:43:52 PM Infra.BasePage - LOG IN SUCCESS
+[INFO] Nov 13, 2023 12:52:15 PM Infra.BasePage - SECRET ANSWER: abc
+[INFO] Nov 13, 2023 12:52:19 PM Infra.BasePage - CLICK ON SEND NOW BUTTON 
 
-[INFO] Nov 03, 2023 2:43:56 PM Infra.BasePage - -------------------------------------------------------
-[INFO] Nov 03, 2023 2:43:56 PM Infra.BasePage - REMEMBER ME FUNCTION VALIDATED
-[INFO] Nov 03, 2023 2:43:56 PM Infra.BasePage - -------------------------------------------------------
+[ERROR] Nov 13, 2023 12:52:23 PM Infra.BasePage - Oooops!
 
-[INFO] Nov 03, 2023 2:43:58 PM Infra.BasePage - =======================================================
-[INFO] Nov 03, 2023 2:43:58 PM Infra.BasePage - CLOSING WEB BROWSER
-[INFO] Nov 03, 2023 2:43:58 PM Infra.BasePage - =======================================================
+Your answer is invalid
+TRY AGAIN
+
+[INFO] Nov 13, 2023 12:52:23 PM Infra.BasePage - -------------------------------------------------------
+[INFO] Nov 13, 2023 12:52:23 PM Infra.BasePage - VALIDATING INVALID SECRET ANSWER PROCESSED
+[INFO] Nov 13, 2023 12:52:23 PM Infra.BasePage - -------------------------------------------------------
+
+[INFO] Nov 13, 2023 12:52:25 PM Infra.BasePage - REFRESHING THE BROWSER
+[INFO] Nov 13, 2023 12:52:26 PM Infra.BasePage - -------------------------------------------------------
+[INFO] Nov 13, 2023 12:52:26 PM Infra.BasePage - VALIDATING IF NEW PASSWORD SENT
+[INFO] Nov 13, 2023 12:52:26 PM Infra.BasePage - -------------------------------------------------------
+
+[INFO] Nov 13, 2023 12:52:29 PM Infra.BasePage - REDIRECT TO: http://10.18.0.131:3000/login
+[INFO] Nov 13, 2023 12:52:29 PM Infra.BasePage - CLICK ON THE FORGOT PASSWORD LINK
+[INFO] Nov 13, 2023 12:52:31 PM Infra.BasePage - ENTER USER ID: Leon123
+[INFO] Nov 13, 2023 12:52:35 PM Infra.BasePage - CLICK ON CONTINUE BUTTON 
+
+[INFO] Nov 13, 2023 12:52:37 PM Infra.BasePage - SECRET ANSWER: a4
+[INFO] Nov 13, 2023 12:52:41 PM Infra.BasePage - CLICK ON SEND NOW BUTTON 
+
+[ERROR] Nov 13, 2023 12:52:45 PM Infra.BasePage - PASSWORD SENT MESSAGE: Great!
+
+Generated password and activation link has been sent to your email address successfully.
+CHECK YOUR MAIL
+
+[INFO] Nov 13, 2023 12:52:46 PM Infra.BasePage - CLICK ON CHECK YOUR MAIL BUTTON 
+
+[INFO] Nov 13, 2023 12:52:49 PM Infra.BasePage - NAVIGATE TO THE EMAIL LINK 
+
+[INFO] Nov 13, 2023 12:52:51 PM Infra.BasePage - SIGNING IN TO THE EMAIL ACCOUNT 
+
+[INFO] Nov 13, 2023 12:52:51 PM Infra.BasePage - CLICK ON SIGN IN BUTTON 
+
+[INFO] Nov 13, 2023 12:53:03 PM Infra.BasePage - ENTER EMAIL 
+
+[INFO] Nov 13, 2023 12:53:08 PM Infra.BasePage - CLICK ON NEXT BUTTON 
+
+[INFO] Nov 13, 2023 12:53:10 PM Infra.BasePage - ENTER PASSWORD 
+
+[INFO] Nov 13, 2023 12:53:16 PM Infra.BasePage - CLICK ON SIGN IN BUTTON 
+
+[INFO] Nov 13, 2023 12:53:23 PM Infra.BasePage - CLICK ON STAY SIGNED IN BUTTON 
+
+[INFO] Nov 13, 2023 12:53:30 PM Infra.BasePage - VALIDATING THE INBOX URL.. 
+
+[INFO] Nov 13, 2023 12:53:32 PM Infra.BasePage - MAIL INBOX OPENED: https://outlook.live.com/mail/0/
+[INFO] Nov 13, 2023 12:53:32 PM Infra.BasePage - GET THE DATE & TIME OF THE NEWEST MAIL 
+
+[INFO] Nov 13, 2023 12:53:32 PM Infra.BasePage - DATE & TIME OF THE NEWEST MAIL: 12:52 PM
+[INFO] Nov 13, 2023 12:53:36 PM Infra.BasePage - GET THE CURRENT DATE & TIME 
+
+[INFO] Nov 13, 2023 12:53:36 PM Infra.BasePage - CURRENT DATE & TIME: 12:53 PM
+[INFO] Nov 13, 2023 12:53:40 PM Infra.BasePage - GET THE DATE AND TIME DIFFERENCE 
+
+[INFO] Nov 13, 2023 12:53:40 PM Infra.BasePage - THE EMAIL DATE AND TIME IS WITHIN +/- 300 SECONDS OF THE CURRENT DATE AND TIME: -60 seconds
+[INFO] Nov 13, 2023 12:53:40 PM Infra.BasePage - NEW EMAIL WITH A TEMPORARY PASSWORD RECEIVED
+[INFO] Nov 13, 2023 12:53:44 PM Infra.BasePage - -------------------------------------------------------
+[INFO] Nov 13, 2023 12:53:44 PM Infra.BasePage - VALIDATING IF NEW PASSWORD IS SENT TO THE EMAIL IS PROCESSED
+[INFO] Nov 13, 2023 12:53:44 PM Infra.BasePage - -------------------------------------------------------
+
+[INFO] Nov 13, 2023 12:53:46 PM Infra.BasePage - =======================================================
+[INFO] Nov 13, 2023 12:53:46 PM Infra.BasePage - CLOSING WEB BROWSER
+[INFO] Nov 13, 2023 12:53:46 PM Infra.BasePage - =======================================================
 

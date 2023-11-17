@@ -2,7 +2,7 @@ package Pages;
 
 import Infra.EnvInfo;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.PageFactory;;;
 
 public class HomePage {
     private WebDriver driver;

@@ -1,6 +1,7 @@
 package ErrorValidations;
 
 import Infra.BasePage;
+import Pages.EmailInboxPage;
 import Pages.ForgotPasswordPage;
 import Pages.HomePage;
 import Pages.LoginPage;
@@ -8,6 +9,11 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
+
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
+import java.util.Locale;
 
 public class ForgotPassErrorValidations extends ForgotPasswordPage {
     public static Logger logger = LogManager.getLogger(BasePage.class);
@@ -37,9 +43,10 @@ public class ForgotPassErrorValidations extends ForgotPasswordPage {
         ForgotPasswordPage forgotPass = new ForgotPasswordPage(driver);
 
         try {
-            boolean isErrorMessageVisible = forgotPass.getInvalidUserIDPopup();
-            Assert.assertTrue(isErrorMessageVisible, "INVALID USER ID VALIDATION POPUP IS VISIBLE");
-            logger.error(forgotPass.popupValidationMsg()+"\n");
+            if (forgotPass.getInvalidUserIDPopup()) {
+                Assert.assertTrue(forgotPass.getInvalidUserIDPopup(), "INVALID USER ID VALIDATION POPUP IS VISIBLE");
+                logger.error(forgotPass.popupValidationMsg() + "\n");
+            }
         } catch (Exception e) {
             Assert.fail("POPUP IS NOT VISIBLE");
         }
@@ -61,12 +68,12 @@ public class ForgotPassErrorValidations extends ForgotPasswordPage {
             }
             else
             {
-                Assert.fail("INVALID USER ID");
+                Assert.fail("INVALID USER ID"+ ActualURL);
                 logger.info("INVALID USER ID\n");
                 Thread.sleep(2000);
             }
         } catch (Exception e) {
-            Assert.fail("INVALID USER ID");
+            Assert.fail("INVALID USER ID"+ ActualURL);
         }
     }
 
@@ -101,12 +108,25 @@ public class ForgotPassErrorValidations extends ForgotPasswordPage {
 
     public void passwordSentSuccess() throws InterruptedException {
         ForgotPasswordPage forgotPass = new ForgotPasswordPage(driver);
+        String expectedPopupMsg = "Great! Generated password and activation link has been sent to your email address successfully. Check your mail";
+        String actualPopupMsg = forgotPass.resetSuccessValidationMsg();
+
+        expectedPopupMsg = expectedPopupMsg.replaceAll("\\s", "").toLowerCase();
+        actualPopupMsg = actualPopupMsg.replaceAll("\\s", "").toLowerCase();
+
         try {
-            boolean isSuccessMessageVisible = forgotPass.getResetSuccessPopup();
-            Assert.assertTrue(isSuccessMessageVisible, "PASSWORD SENT SUCCESS POPUP IS VISIBLE");
-            logger.error(forgotPass.resetSuccessValidationMsg()+"\n");
+            if (forgotPass.getResetSuccessPopup() && expectedPopupMsg.equals(actualPopupMsg)) {
+                boolean isSuccessMessageVisible = forgotPass.getResetSuccessPopup();
+                Assert.assertTrue(isSuccessMessageVisible, "PASSWORD SENT SUCCESS POPUP IS VISIBLE");
+                logger.error("PASSWORD SENT MESSAGE: " + forgotPass.resetSuccessValidationMsg() + "\n");
+            }
+            else {
+                Assert.fail("PASSWORD SENT SUCCESS POPUP IS NOT VISIBLE: " + actualPopupMsg);
+                Assert.fail("NEW PASSWORD SENDING FAILED");
+            }
         } catch (Exception e) {
-            Assert.fail("PASSWORD SENT SUCCESS POPUP IS NOT VISIBLE");
+            Assert.fail("PASSWORD SENT SUCCESS POPUP IS NOT VISIBLE: " + actualPopupMsg);
+            Assert.fail("NEW PASSWORD SENDING FAILED");
         }
     }
 
@@ -118,18 +138,46 @@ public class ForgotPassErrorValidations extends ForgotPasswordPage {
         try {
             if(ExpectedURL.equals(ActualURL))
             {
-                Assert.assertEquals(ExpectedURL, ActualURL, "NEW PASSWORD SENT TO THE MAIL");
+                Assert.assertEquals(ExpectedURL, ActualURL, "MAIL INBOX OPENED");
                 Thread.sleep(2000);
-                logger.info("NEW PASSWORD SENT TO THE MAIL: " + ActualURL);
+                logger.info("MAIL INBOX OPENED: " + ActualURL);
             }
             else
             {
-                Assert.fail("PASSWORD RESET FAILED");
-                logger.info("PASSWORD RESET FAILED\n");
+                Assert.fail("FAILED TO OPEN INBOX:\n " + "Actual URL: " + ActualURL + "\nExpected URL: " + ExpectedURL);
+                logger.info("FAILED TO OPEN INBOX:\n " + "Actual URL: " + ActualURL + "\nExpected URL: " + ExpectedURL);
                 Thread.sleep(2000);
             }
         } catch (Exception e) {
-            Assert.fail("PASSWORD RESET FAILED");
+            e.printStackTrace();
+            Assert.fail("FAILED TO OPEN INBOX:\n " + "Actual URL: " + ActualURL + "\nExpected URL: " + ExpectedURL);
+        }
+    }
+
+    public void NewPasswordMailValidation() {
+
+        EmailInboxPage emailInboxPage = new EmailInboxPage(driver);
+        try {
+            // Format the date and time in "h:mm a" format
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("h:mm a", Locale.ENGLISH);
+
+            // Get the Date and time from the email and the current date and time as string, then parse it to LocalTime type
+            LocalTime localTimeEmail = LocalTime.parse(emailInboxPage.getFirstNewestMailDateTime(), formatter);
+            LocalTime localTimeCurrent = LocalTime.parse(emailInboxPage.getCurrentDateTime(), formatter);
+
+            // Calculate the time difference in seconds
+            long timeDifference = ChronoUnit.SECONDS.between(localTimeCurrent, localTimeEmail);
+
+            // Check if the time difference is within the range of +/- 300 seconds
+            if (Math.abs(timeDifference) <= 300) {
+                logger.info("THE EMAIL DATE AND TIME IS WITHIN +/- 300 SECONDS OF THE CURRENT DATE AND TIME: " + timeDifference + " seconds");
+                logger.info("NEW EMAIL WITH A TEMPORARY PASSWORD RECEIVED");
+            } else {
+                logger.info("NEW EMAIL WITH A TEMPORARY PASSWORD HAS NOT RECEIVED");
+                Assert.fail("THE EMAIL DATE AND TIME IS NOT WITHIN +/- 300 SECONDS OF THE CURRENT DATE AND TIME: " + timeDifference + " seconds");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }

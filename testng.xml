@@ -3,16 +3,6 @@
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true" name="D:/eclipse_work/V12">
         <classes>
-<!--            <class name="Tests.ForgotPassTest">-->
-<!--                <methods>-->
-<!--                    <include name="emptyUserIDValidation"/>-->
-<!--                    <include name="InvalidUserID"/>-->
-<!--                    <include name="validUserID"/>-->
-<!--                    <include name="emptySecretAnswerValidation"/>-->
-<!--                    <include name="InvalidAnswer"/>-->
-<!--                    <include name="sendNewPassword"/>-->
-<!--                </methods>-->
-<!--            </class>-->
             <class name="Tests.LoginTest">
                 <methods>
                     <include name="EmptyCredentials"/>
@@ -21,21 +11,31 @@
                     <include name="SignInWithRememberMe"/>
                 </methods>
             </class>
-<!--            <class name="Tests.PasswordResetTest">-->
-<!--                <methods>-->
-<!--                    <include name="VerifyingCredentials"/>-->
-<!--                    <include name="emptyFieldsValidation"/>-->
-<!--                    <include name="invalidCurrentPassValidation"/>-->
-<!--                    <include name="newPassCharLimitValidation"/>-->
-<!--                    <include name="newPassExcludeCapitalsValidation"/>-->
-<!--                    <include name="newPassExcludeSimplesValidation"/>-->
-<!--                    <include name="newPassExcludeNumbersValidation"/>-->
-<!--                    <include name="newPassExcludeSymbolsValidation"/>-->
-<!--                    <include name="passwordMismatchValidation"/>-->
-<!--                    <include name="passwordResetSuccessValidation"/>-->
-<!--                    <include name="loginWithNewPassword"/>-->
-<!--                </methods>-->
-<!--            </class>-->
+            <class name="Tests.PasswordResetTest">
+                <methods>
+                    <include name="VerifyingCredentials"/>
+                    <include name="emptyFieldsValidation"/>
+                    <include name="invalidCurrentPassValidation"/>
+                    <include name="newPassCharLimitValidation"/>
+                    <include name="newPassExcludeCapitalsValidation"/>
+                    <include name="newPassExcludeSimplesValidation"/>
+                    <include name="newPassExcludeNumbersValidation"/>
+                    <include name="newPassExcludeSymbolsValidation"/>
+                    <include name="passwordMismatchValidation"/>
+                    <include name="passwordResetSuccessValidation"/>
+                    <include name="loginWithNewPassword"/>
+                </methods>
+            </class>
+            <class name="Tests.ForgotPassTest">
+                <methods>
+                    <include name="emptyUserIDValidation"/>
+                    <include name="InvalidUserID"/>
+                    <include name="validUserID"/>
+                    <include name="emptySecretAnswerValidation"/>
+                    <include name="InvalidAnswer"/>
+                    <include name="sendNewPassword"/>
+                </methods>
+            </class>
         </classes>
     </test>
 </suite>

@@ -129,17 +129,17 @@ public class EnvInfo
         return url;
     }
 
-    public static String getTitle()
+    public static String getNewPasswordMailURL()
     {
         String title = "";
 
         try {
-            //Reading the 1st sheet of the Excel to get the title which is in the 3rd col 1st row
+            //Reading the 3rd sheet of the Excel to get the URL which is in the 2nd col 1st row
             FileInputStream fis = new FileInputStream("../V12/src/test/resources/TestData.xlsm");
             XSSFWorkbook workbook = new XSSFWorkbook(fis);
-            XSSFSheet sheet = workbook.getSheetAt(0);
+            XSSFSheet sheet = workbook.getSheetAt(2);
 
-            int columnIndex = 2;
+            int columnIndex = 1;
 
             Cell cell = sheet.getRow(1).getCell(columnIndex);
             if (cell != null)

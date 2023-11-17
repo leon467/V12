@@ -5,9 +5,12 @@ import ErrorValidations.HomePageErrorValidations;
 import ErrorValidations.LoginErrorValidations;
 import Infra.BasePage;
 import Infra.DataProviders;
+import Infra.EnvInfo;
+import Pages.EmailInboxPage;
 import Pages.ForgotPasswordPage;
 import Pages.LoginPage;
 import org.openqa.selenium.JavascriptExecutor;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class ForgotPassTest extends BasePage {
@@ -59,19 +62,12 @@ public class ForgotPassTest extends BasePage {
         logger.info("-------------------------------------------------------\n");
         Thread.sleep(2000);
 
-        LoginPage loginPage = new LoginPage(driver);
         ForgotPasswordPage forgotPasswordPage = new ForgotPasswordPage(driver);
         ForgotPassErrorValidations forgotPassErrorValidations = new ForgotPassErrorValidations(driver);
 
-        loginPage.openLoginPage(loginPage.setUrl());
-        Thread.sleep(2000);
-        logger.info("REDIRECT TO: " +loginPage.setUrl());
+        driver.navigate().refresh();
 
         userID = "abc";
-
-        logger.info("CLICK ON THE FORGOT PASSWORD LINK");
-        Thread.sleep(2000);
-        forgotPasswordPage.clickOnForgotLink();
 
         logger.info("ENTER USERNAME: "+userID);
         forgotPasswordPage.fillUserID(userID);
@@ -90,7 +86,6 @@ public class ForgotPassTest extends BasePage {
 
         logger.info("REFRESHING THE BROWSER");
         driver.navigate().refresh();
-
     }
 
     @Test(priority = 3, description = "Verifying valid user ID", dataProvider = "loginCredentials", dataProviderClass = DataProviders.class)
@@ -101,17 +96,10 @@ public class ForgotPassTest extends BasePage {
         logger.info("-------------------------------------------------------\n");
         Thread.sleep(2000);
 
-        LoginPage loginPage = new LoginPage(driver);
         ForgotPasswordPage forgotPasswordPage = new ForgotPasswordPage(driver);
         ForgotPassErrorValidations forgotPassErrorValidations = new ForgotPassErrorValidations(driver);
 
-        loginPage.openLoginPage(loginPage.setUrl());
-        Thread.sleep(2000);
-        logger.info("REDIRECT TO: " +loginPage.setUrl());
-
-        logger.info("CLICK ON THE FORGOT PASSWORD LINK");
-        Thread.sleep(2000);
-        forgotPasswordPage.clickOnForgotLink();
+        driver.navigate().refresh();
 
         logger.info("ENTER USERNAME: "+username);
         forgotPasswordPage.fillUserID(username);
@@ -127,7 +115,7 @@ public class ForgotPassTest extends BasePage {
         Thread.sleep(2000);
     }
 
-    @Test(priority = 4, description = "Validating Empty Secret Answer", dependsOnMethods = "validUserID")
+    @Test(priority = 4, description = "Validating Empty Secret Answer")
     public void emptySecretAnswerValidation() throws InterruptedException {
         logger.info("VALIDATING EMPTY SECRET ANSWER");
         logger.info("-------------------------------------------------------\n");
@@ -154,7 +142,7 @@ public class ForgotPassTest extends BasePage {
         Thread.sleep(2000);
     }
 
-    @Test(priority = 5, description = "Validating Invalid secret answer", dependsOnMethods = "validUserID")
+    @Test(priority = 5, description = "Validating Invalid secret answer")
     public void InvalidAnswer() throws InterruptedException {
 
         logger.info("-------------------------------------------------------");
@@ -164,6 +152,8 @@ public class ForgotPassTest extends BasePage {
 
         ForgotPasswordPage forgotPasswordPage = new ForgotPasswordPage(driver);
         ForgotPassErrorValidations forgotPassErrorValidations = new ForgotPassErrorValidations(driver);
+
+        driver.navigate().refresh();
 
         secretAnswer = "abc";
 
@@ -187,7 +177,7 @@ public class ForgotPassTest extends BasePage {
 
     }
 
-    @Test(priority = 6, description = "Verifying if the new password is sent to the mail", dataProvider = "getSecretAnswer", dataProviderClass = DataProviders.class, dependsOnMethods = "validUserID")
+    @Test(priority = 6, description = "Verifying if the new password is sent to the mail", dataProvider = "getSecretAnswer", dataProviderClass = DataProviders.class)
     public void sendNewPassword(String secretAnswer, String emailURL) throws InterruptedException {
 
         logger.info("-------------------------------------------------------");
@@ -195,13 +185,34 @@ public class ForgotPassTest extends BasePage {
         logger.info("-------------------------------------------------------\n");
         Thread.sleep(2000);
 
+        driver.navigate().refresh();
+
         ForgotPasswordPage forgotPasswordPage = new ForgotPasswordPage(driver);
+        EmailInboxPage emailInboxPage = new EmailInboxPage(driver);
         ForgotPassErrorValidations forgotPassErrorValidations = new ForgotPassErrorValidations(driver);
+
+        //Test code
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.openLoginPage(loginPage.setUrl());
+        logger.info("REDIRECT TO: " +loginPage.setUrl());
+
+        logger.info("CLICK ON THE FORGOT PASSWORD LINK");
+        Thread.sleep(2000);
+        forgotPasswordPage.clickOnForgotLink();
+
+        userID = "Leon123";
+
+        logger.info("ENTER USER ID: " + userID);
+        forgotPasswordPage.fillUserID(userID);
+        Thread.sleep(2000);
+
+        logger.info("CLICK ON CONTINUE BUTTON \n");
+        forgotPasswordPage.clickContinueButton();
+        Thread.sleep(2000);
+        //Test code end
 
         logger.info("SECRET ANSWER: "+secretAnswer);
         forgotPasswordPage.fillSecretAnswer(secretAnswer);
-        Thread.sleep(2000);
-
         Thread.sleep(2000);
 
         logger.info("CLICK ON SEND NOW BUTTON \n");
@@ -211,13 +222,53 @@ public class ForgotPassTest extends BasePage {
         forgotPassErrorValidations.passwordSentSuccess();
         Thread.sleep(1500);
 
+        logger.info("CLICK ON CHECK YOUR MAIL BUTTON \n");
         forgotPasswordPage.clickCheckYourMailButton();
         Thread.sleep(1500);
 
+        logger.info("NAVIGATE TO THE EMAIL LINK \n");
         forgotPasswordPage.switchToEmailTab();
         Thread.sleep(1500);
 
+        logger.info("SIGNING IN TO THE EMAIL ACCOUNT \n");
+        logger.info("CLICK ON SIGN IN BUTTON \n");
+        emailInboxPage.clickOnSignIn();
+        Thread.sleep(3000);
+
+        logger.info("ENTER EMAIL \n");
+        emailInboxPage.fillEmail("leonisaac99@hotmail.com");
+        Thread.sleep(3000);
+
+        logger.info("CLICK ON NEXT BUTTON \n");
+        emailInboxPage.clickOnNextButton();
+        Thread.sleep(2000);
+
+        logger.info("ENTER PASSWORD \n");
+        emailInboxPage.fillPassword("LeonOutlook99");
+        Thread.sleep(3000);
+
+        logger.info("CLICK ON SIGN IN BUTTON \n");
+        emailInboxPage.clickOnSignInButton();
+        Thread.sleep(4000);
+
+        logger.info("CLICK ON STAY SIGNED IN BUTTON \n");
+        emailInboxPage.clickOnStaySingedButton();
+        Thread.sleep(4000);
+
+        logger.info("VALIDATING THE INBOX URL.. \n");
         forgotPassErrorValidations.newPasswordMailRedirect(driver.getCurrentUrl());
+
+        logger.info("GET THE DATE & TIME OF THE NEWEST MAIL \n");
+        logger.info("DATE & TIME OF THE NEWEST MAIL: " + emailInboxPage.getFirstNewestMailDateTime());
+        Thread.sleep(4000);
+
+        logger.info("GET THE CURRENT DATE & TIME \n");
+        logger.info("CURRENT DATE & TIME: " + emailInboxPage.getCurrentDateTime());
+        Thread.sleep(4000);
+
+        logger.info("GET THE DATE AND TIME DIFFERENCE \n");
+        forgotPassErrorValidations.NewPasswordMailValidation();
+        Thread.sleep(4000);
 
         logger.info("-------------------------------------------------------");
         logger.info("VALIDATING IF NEW PASSWORD IS SENT TO THE EMAIL IS PROCESSED");

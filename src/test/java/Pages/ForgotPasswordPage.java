@@ -23,7 +23,7 @@ public class ForgotPasswordPage {
     @FindBy(xpath = "//button[contains(text(),'Continue')]")
     private WebElement userIDContinueButton;
 
-    @FindBy(id = "mui-5")
+    @FindBy(css = "input[aria-invalid='false']")
     private WebElement secretAnswer;
 
     @FindBy(id = "mui-5-helper-text")
@@ -139,7 +139,7 @@ public class ForgotPasswordPage {
 
     public String getNewPassMailURL() {
         EnvInfo envInfo = new EnvInfo();
-        String secretQuestionPageURL = envInfo.getSecretQuestionPageURL();
-        return secretQuestionPageURL;
+        String newPasswordMailURL = envInfo.getNewPasswordMailURL();
+        return newPasswordMailURL;
     }
 }

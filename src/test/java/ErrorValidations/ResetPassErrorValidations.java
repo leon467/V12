@@ -119,7 +119,7 @@ public class ResetPassErrorValidations extends PasswordResetPage {
             expectedPopUpMsg = expectedPopUpMsg.toLowerCase();
             actualPopupMsg = actualPopupMsg.toLowerCase();
 
-            if (passwordResetPage.getPassMismatchErrorPopup() == true && expectedPopUpMsg.equals(actualPopupMsg)) {
+            if (passwordResetPage.getPassMismatchErrorPopup() && expectedPopUpMsg.equals(actualPopupMsg)) {
                 boolean isPassMismatchPopupVisible = passwordResetPage.getPassMismatchErrorPopup();
                 Assert.assertTrue(isPassMismatchPopupVisible, "PASSWORD MISMATCH ERROR POPUP IS VISIBLE");
                 logger.error("FOLLOWING MESSAGE WAS DISPLAYED SUCCESSFULLY IN THE POPUP: " + passwordResetPage.passMismatchPopupMsg() + "\n");
@@ -136,13 +136,10 @@ public class ResetPassErrorValidations extends PasswordResetPage {
             String expectedPopUpMsg = "Great! <b>Password has been changed successfully.</b><br><br> DETAILS ARE SAVED";
             String actualPopupMsg = passwordResetPage.passResetSuccessPopupMsg();
 
-            expectedPopUpMsg = expectedPopUpMsg.replaceAll("\\s", "");
-            actualPopupMsg = actualPopupMsg.replaceAll("\\s", "");
+            expectedPopUpMsg = expectedPopUpMsg.replaceAll("\\s", "").toLowerCase();
+            actualPopupMsg = actualPopupMsg.replaceAll("\\s", "").toLowerCase();
 
-            expectedPopUpMsg = expectedPopUpMsg.toLowerCase();
-            actualPopupMsg = actualPopupMsg.toLowerCase();
-
-            if (passwordResetPage.getPassResetSuccessPopup() == true && expectedPopUpMsg.equals(actualPopupMsg)) {
+            if (passwordResetPage.getPassResetSuccessPopup() && expectedPopUpMsg.equals(actualPopupMsg)) {
                 boolean isPassResetSuccessPopupVisible = passwordResetPage.getPassMismatchErrorPopup();
                 Assert.assertTrue(isPassResetSuccessPopupVisible, "PASSWORD RESET SUCCESS POPUP IS VISIBLE");
                 logger.error("FOLLOWING MESSAGE WAS DISPLAYED SUCCESSFULLY IN THE POPUP: " + passwordResetPage.passResetSuccessPopupMsg() + "\n");
